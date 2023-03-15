@@ -5,6 +5,8 @@ import MenuItem from './molecules/MenuItem'
 import Avatar from './atoms/Avatar';
 import Spacer from './atoms/Spacer';
 import Subtitle from './atoms/fonts/Subtitle';
+import Textinfo from './atoms/fonts/TextInfo';
+import SubtitleInfo from './molecules/TitleInfo';
 
 function App() {
   return (
@@ -37,9 +39,10 @@ function App() {
         theme='DarkTheme'
       />
 
-      <Subtitle 
-        text='Home'
+      <SubtitleInfo 
         theme='LightTheme'
+        title='React'
+        info='@SinouuuJ'
       />
     </div>
   );

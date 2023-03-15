@@ -80,3 +80,33 @@ h3 {
     color: $white;
   }
 }
+
+p {
+  &.info {
+    font-family: TwitterChirp;
+    font-size: 1rem;
+    font-weight: 400;
+
+    &.LightTheme {
+      color: $dark5;
+    }
+
+    &.DarkTheme {
+      color: $dark6
+    }
+  }
+
+  &.content {
+    font-family: TwitterChirp;
+    font-size: 1rem;
+    font-weight: 400;
+
+    &.LightTheme {
+      color: $black;
+    }
+
+    &.DarkTheme {
+      color: $white
+    }
+  }
+}
