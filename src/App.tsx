@@ -1,7 +1,7 @@
 import React from 'react';
 import './style/main.scss'
 import Button from "./atoms/Button";
-import MenuItem from './components/MenuItem'
+import MenuItem from './molecules/MenuItem'
 
 function App() {
   return (
