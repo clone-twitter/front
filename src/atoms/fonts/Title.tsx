@@ -1,9 +1,10 @@
 import React from "react";
+import { State, Theme } from "../../interfaces/Theme";
 
 interface Props {
   title: string,
-  theme: 'LightTheme' | 'DarkTheme',
-  state?: 'Default' | 'Blue' | 'Selected'
+  theme: Theme,
+  state?: State
 }
 
 const Title = ({title, theme, state}: Props) => {

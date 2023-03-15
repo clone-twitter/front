@@ -1,9 +1,10 @@
 import React from "react";
 import Title from "../atoms/fonts/Title";
 import Textinfo from "../atoms/fonts/TextInfo";
+import { Theme } from "../interfaces/Theme";
 
 interface Props {
-  theme: 'LightTheme' | 'DarkTheme',
+  theme: Theme,
   title: string,
   info: string
 }

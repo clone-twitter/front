@@ -1,11 +1,12 @@
 import React from "react";
 import Title from '../atoms/fonts/Title'
 import Logo from '../atoms/Logo'
+import { State, Theme } from "../interfaces/Theme";
 
 interface Props {
-  theme: 'DarkTheme' | 'LightTheme',
+  theme: Theme,
   name: string,
-  state?: 'Default' | 'Selected' | 'Blue',
+  state?: State,
   title: string
 }
 

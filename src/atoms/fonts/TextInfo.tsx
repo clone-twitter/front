@@ -1,8 +1,9 @@
 import React from "react";
+import { Theme } from "../../interfaces/Theme";
 
 interface Props {
   text: string,
-  theme: 'DarkTheme' | 'LightTheme'
+  theme: Theme
 }
 
 const Textinfo = ({text, theme}: Props) => {

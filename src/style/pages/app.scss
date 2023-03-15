@@ -1,0 +1,14 @@
+.App {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  &.LightTheme {
+    background-color: $white;
+  }
+
+  &.DarkTheme {
+    background-color: $dark1;
+  }
+}

@@ -3,14 +3,15 @@ import Subtitle from './fonts/Subtitle'
 
 interface Props {
   size: "big" | "medium" | "small",
-  type: "primary" | "secondary"
+  type: "primary" | "secondary",
+  text: string
 }
 
-const Button = ({size, type}: Props) => {
+const Button = ({size, type, text}: Props) => {
   return (
     <button className={`button ${size} ${type}`}>
       <Subtitle 
-        text='Tweet'
+        text={text}
       />
     </button>
   )

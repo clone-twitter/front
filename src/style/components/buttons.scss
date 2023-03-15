@@ -7,10 +7,15 @@
   border: 1px solid $primary;
   font-family: TwitterChirp, serif;
   font-weight: 700;
+  transition: background-color 0.3s ease;
 
   &.primary {
     background-color: $primary;
     color: $white;
+
+    &:hover {
+      background-color: $primaryhover;
+    }
   }
 
   &.secondary {
