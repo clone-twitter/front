@@ -3,6 +3,7 @@ import './style/main.scss'
 import Button from "./atoms/Button";
 import MenuItem from './molecules/MenuItem'
 import Avatar from './atoms/Avatar';
+import Spacer from './atoms/Spacer';
 
 function App() {
   return (
@@ -29,6 +30,10 @@ function App() {
       <Avatar 
         img='goku.jpeg'
         size='medium'
+      />
+
+      <Spacer
+        theme='DarkTheme'
       />
     </div>
   );

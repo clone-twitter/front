@@ -1,0 +1,13 @@
+.spacer {
+  display: block;
+  height: 10px;
+  width: 100%;
+
+  &.LightTheme {
+    background-color: $dark8;
+  }
+
+  &.DarkTheme {
+    background-color: $dark2;
+  }
+}
