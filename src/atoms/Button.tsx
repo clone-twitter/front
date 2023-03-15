@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Button = () => {
+interface Props {
+  size: "big" | "medium" | "small",
+  type: "primary" | "secondary"
+}
+
+const Button = ({size, type}: Props) => {
   return (
-    <button className="button primary big">
+    <button className={`button ${size} ${type}`}>
       Tweet
     </button>
   )

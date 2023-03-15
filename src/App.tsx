@@ -5,7 +5,10 @@ import Button from "./atoms/Button";
 function App() {
   return (
     <div className="App">
-      <Button/>
+      <Button
+        size="big"
+        type='primary'
+      />
     </div>
   );
 }
