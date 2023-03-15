@@ -92,21 +92,21 @@ p {
     }
 
     &.DarkTheme {
-      color: $dark6
+      color: $dark6;
     }
   }
 
   &.content {
     font-family: TwitterChirp;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
 
     &.LightTheme {
       color: $black;
     }
 
     &.DarkTheme {
-      color: $white
+      color: $white;
     }
   }
 }

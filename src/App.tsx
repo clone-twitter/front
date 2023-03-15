@@ -7,6 +7,7 @@ import Spacer from './atoms/Spacer';
 import Subtitle from './atoms/fonts/Subtitle';
 import Textinfo from './atoms/fonts/TextInfo';
 import SubtitleInfo from './molecules/TitleInfo';
+import Textcontent from './atoms/fonts/TextContent';
 
 function App() {
   return (
@@ -43,6 +44,11 @@ function App() {
         theme='LightTheme'
         title='React'
         info='@SinouuuJ'
+      />
+
+      <Textcontent 
+        text='This is a content text for testing the UI'
+        theme='LightTheme'
       />
     </div>
   );
