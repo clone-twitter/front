@@ -1,11 +1,11 @@
+import React from 'react';
 import './style/main.scss'
+import Button from "./atoms/Button";
 
 function App() {
   return (
     <div className="App">
-      <button className="button primary big">
-        Tweet
-      </button>
+      <Button/>
     </div>
   );
 }
