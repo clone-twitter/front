@@ -2,6 +2,7 @@ import React from 'react';
 import './style/main.scss'
 import Button from "./atoms/Button";
 import MenuItem from './molecules/MenuItem'
+import Avatar from './atoms/Avatar';
 
 function App() {
   return (
@@ -23,6 +24,11 @@ function App() {
         name='Bookmarks'
         title="Bookmarks"
         state="Default"
+      />
+
+      <Avatar 
+        img='goku.jpeg'
+        size='medium'
       />
     </div>
   );
