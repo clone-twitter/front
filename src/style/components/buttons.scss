@@ -1,0 +1,32 @@
+.button {
+  width: 100%;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $primary;
+  font-family: TwitterChirp, serif;
+  font-weight: 400;
+
+  &.primary {
+    background-color: $primary;
+    color: $white;
+  }
+
+  &.secondary {
+    background-color: transparent;
+    color: $primary;
+  }
+
+  &.big {
+    height: 50px;
+  }
+
+  &.medium {
+    height: 40px;
+  }
+
+  &.small {
+    height: 30px;
+  }
+}
