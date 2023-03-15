@@ -66,3 +66,17 @@ h2 {
   font-family: TwitterChirp;
   font-weight: 700;
 }
+
+h3 {
+  font-size: 1rem;
+  font-family: TwitterChirp;
+  font-weight: 700;
+
+  &.LightTheme {
+    color: $black;
+  }
+
+  &.DarkTheme {
+    color: $white;
+  }
+}

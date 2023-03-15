@@ -1,4 +1,5 @@
 import React from 'react'
+import Subtitle from './fonts/Subtitle'
 
 interface Props {
   size: "big" | "medium" | "small",
@@ -8,7 +9,9 @@ interface Props {
 const Button = ({size, type}: Props) => {
   return (
     <button className={`button ${size} ${type}`}>
-      Tweet
+      <Subtitle 
+        text='Tweet'
+      />
     </button>
   )
 }
