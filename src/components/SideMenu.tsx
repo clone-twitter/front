@@ -14,41 +14,49 @@ interface Props {
 
 const dataItems: DataItems[] = [
   {
+    id: 0,
     name: "Home",
     title: "Accueil",
     state: "Blue"
   },
   {
+    id: 1,
     name: "Explore",
     title: "Explorer",
     state: "Default"
   },
   {
+    id: 2,
     name: "Notifications",
     title: "Notifications",
     state: "Default"
   },
   {
+    id: 3,
     name: "Messages",
     title: "Messages",
     state: "Default"
   },
   {
+    id: 4,
     name: "Bookmarks",
     title: "Signets",
     state: "Default"
   },
   {
+    id: 5,
     name: "Lists",
     title: "Listes",
     state: "Default"
   },
   {
+    id: 6,
     name: "Profile",
     title: "Profile",
     state: "Default"
   },
   {
+    id: 7,
     name: "More",
     title: "Plus",
     state: "Default"
@@ -71,6 +79,7 @@ const SideMenu = ({theme, img, name, id}: Props) => {
             menuItems.map(item => {
               return (
                 <MenuItem
+                  key={item.id}
                   theme={theme}
                   name={item.name}
                   title={item.title}
