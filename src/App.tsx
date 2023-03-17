@@ -11,6 +11,9 @@ function App() {
     <div className={`App ${theme}`}>
       <SideMenu
         theme={theme as unknown as Theme}
+        img="goku.jpeg"
+        name="My Name"
+        id="@ItsMyId"
       />
       <main>
 

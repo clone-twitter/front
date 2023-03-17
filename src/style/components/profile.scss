@@ -1,0 +1,15 @@
+.profile_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    .name_wrap {
+      margin-left: 10px;
+    }
+  }
+}

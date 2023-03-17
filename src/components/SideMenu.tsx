@@ -3,9 +3,13 @@ import MenuItem from "../molecules/MenuItem";
 import { State, Theme } from "../interfaces/Theme";
 import { DataItems } from "../interfaces/DataItems";
 import Button from "../atoms/Button";
+import Profile from "../molecules/Profile";
 
 interface Props {
   theme: Theme,
+  img: string,
+  name: string,
+  id: string,
 }
 
 const dataItems: DataItems[] = [
@@ -51,35 +55,45 @@ const dataItems: DataItems[] = [
   },
 ]
 
-const SideMenu = ({theme}: Props) => {
+const SideMenu = ({theme, img, name, id}: Props) => {
 
   const [menuItems, setMenuItems] = useState(dataItems)
 
 
   return (
     <header className="side_menu">
-      <h1>
-        <img src={`${process.env.PUBLIC_URL}/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
-      </h1>
-      <div className="menu_wrap">
-        {
-          menuItems.map(item => {
-            return (
-              <MenuItem
-                theme={theme}
-                name={item.name}
-                title={item.title}
-                state={item.state as unknown as State}
-              />
-            )
-          })
-        }
+      <div className="top">
+        <h1>
+          <img src={`${process.env.PUBLIC_URL}/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
+        </h1>
+        <div className="menu_wrap">
+          {
+            menuItems.map(item => {
+              return (
+                <MenuItem
+                  theme={theme}
+                  name={item.name}
+                  title={item.title}
+                  state={item.state as unknown as State}
+                />
+              )
+            })
+          }
+        </div>
+        <div className="btn_wrap">
+          <Button 
+            size="big"
+            type="primary"
+            text="Tweeter"
+          />
+        </div>
       </div>
-      <div className="btn_wrap">
-        <Button 
-          size="big"
-          type="primary"
-          text="Tweeter"
+      <div className="bottom">
+        <Profile
+          theme={theme}
+          img={img}
+          name={name}
+          id={id}
         />
       </div>
     </header>
