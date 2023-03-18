@@ -6,6 +6,7 @@ $padding: 0 27px 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-right: $border;
 
   h1 {
     transition: background-color 0.3s ease;

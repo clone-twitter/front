@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './style/main.scss'
 import SideMenu from './components/SideMenu';
 import { Theme } from './interfaces/Theme';
+import TopBlock from './components/TopBlock';
 
 
 function App() {
@@ -16,7 +17,10 @@ function App() {
         id="@ItsMyId"
       />
       <main>
-
+        <TopBlock
+          theme={theme as unknown as Theme}
+          title="Accueil"
+        />
       </main>
     </div>
   );
