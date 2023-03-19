@@ -6,4 +6,9 @@
   button {
     cursor: pointer;
   }
+
+  main {
+    box-sizing: border-box;
+    border-right: $border;
+  }
 }
