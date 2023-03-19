@@ -26,7 +26,7 @@ const Profile = ({img, theme, name, id}: Props) => {
             theme={theme}
           />
           <Textinfo
-            text={id}
+            text={`@${id}`}
             theme={theme}
           />
         </div>
