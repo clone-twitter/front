@@ -20,6 +20,10 @@ function App() {
         <TopBlock
           theme={theme as unknown as Theme}
           title="Accueil"
+          placeholder='Quoi de neuf ?'
+          img='goku.jpeg'
+          state="Default"
+          type='primary'
         />
       </main>
     </div>

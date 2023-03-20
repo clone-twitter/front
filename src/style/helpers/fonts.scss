@@ -110,3 +110,21 @@ p {
     }
   }
 }
+
+input {
+  font-family: TwitterChirp;
+
+  &::placeholder {
+    font-family: TwitterChirp;
+    color: $dark6;
+  }
+}
+
+textarea {
+  font-family: TwitterChirp;
+
+  &::placeholder {
+    font-family: TwitterChirp;
+    color: $dark6;
+  }
+}

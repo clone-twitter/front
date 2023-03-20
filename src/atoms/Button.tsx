@@ -1,9 +1,10 @@
 import React from 'react'
+import { Type } from '../interfaces/Theme'
 import Subtitle from './fonts/Subtitle'
 
 interface Props {
   size: "big" | "medium" | "small",
-  type: "primary" | "secondary",
+  type: Type,
   text: string
 }
 

@@ -1,0 +1,18 @@
+.tweetInput {
+  display: block;
+  width: 100%;
+  resize: none;
+  background-color: transparent;
+  border: none;
+  height: auto;
+  min-height: 50px;
+  max-height: 200px;
+  outline: none;
+  padding-top: 15px;
+  color: $white;
+  font-size: 20px;
+
+  &::placeholder {
+    font-size: 20px;
+  }
+}
