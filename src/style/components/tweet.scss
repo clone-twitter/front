@@ -1,0 +1,58 @@
+.tweet {
+  width: 100%;
+  border-bottom: $border;
+  display: flex;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+
+  > header {
+    display: flex;
+    padding: 10px 15px 0 15px;
+  }
+
+  main {
+    width: 100%;
+    display: block;
+
+    header {
+      display: flex;
+      padding: 10px 15px 5px 0;
+      flex-basis: max-content;
+
+      h3 {
+        margin-right: 5px;
+      }
+
+      p {
+        margin-right: 5px;
+        color: $dark6;
+      }
+    }
+
+    .content {
+      margin-bottom: 15px;
+    }
+  }
+
+  footer {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+
+    .tweet_action {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      .info {
+        margin-right: 10px;
+      }
+
+      img {
+        display: block;
+        height: 18px;
+      }
+    }
+  }
+}

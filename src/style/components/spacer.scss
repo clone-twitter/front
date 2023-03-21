@@ -2,6 +2,7 @@
   display: block;
   height: 10px;
   width: 100%;
+  border-bottom: $border;
 
   &.LightTheme {
     background-color: $dark8;

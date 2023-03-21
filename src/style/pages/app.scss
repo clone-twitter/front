@@ -11,4 +11,8 @@
   &.DarkTheme {
     background-color: $dark1;
   }
+
+  .main_content {
+    width: 598px; // TODO : Responsive width
+  }
 }
