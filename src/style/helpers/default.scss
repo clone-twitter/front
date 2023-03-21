@@ -9,6 +9,16 @@
 
   main {
     box-sizing: border-box;
-    border-right: $border;
+    height: 100%;
+    display: flex;
+
+    .main_content {
+      min-height: 100vh;
+      border-right: $border;
+    }
+
+    .side_column {
+      min-height: 100vh;
+    }
   }
 }

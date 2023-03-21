@@ -17,14 +17,19 @@ function App() {
         id="ItsMyId"
       />
       <main>
-        <TopBlock
-          theme={theme as unknown as Theme}
-          title="Accueil"
-          placeholder='Quoi de neuf ?'
-          img='goku.jpeg'
-          state="Default"
-          type='primary'
-        />
+        <div className="main_content">
+          <TopBlock
+            theme={theme as unknown as Theme}
+            title="Accueil"
+            placeholder='Quoi de neuf ?'
+            img='goku.jpeg'
+            state="Default"
+            type='primary'
+          />
+        </div>
+        <div className="side_column">
+          <input type="text" />
+        </div>
       </main>
     </div>
   );
