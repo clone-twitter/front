@@ -2,7 +2,7 @@ import React from "react";
 import { Theme } from "../../interfaces/Theme";
 
 interface Props {
-  text: string,
+  text?: string,
   theme: Theme
 }
 

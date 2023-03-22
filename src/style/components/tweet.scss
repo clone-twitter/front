@@ -45,13 +45,77 @@
       align-items: center;
       cursor: pointer;
 
-      .info {
-        margin-right: 10px;
+      .info,
+      div::before {
+        transition: all 0.3s ease;
       }
 
-      img {
-        display: block;
-        height: 18px;
+      &:hover {
+        &.blue {
+          div::before {
+            background-color: $primary;
+          }
+
+          svg path {
+            fill: $primary;
+          }
+
+          p {
+            color: $primary;
+          }
+        }
+
+        &.red {
+          div::before {
+            background-color: $red;
+          }
+
+          svg path {
+            fill: $red;
+          }
+
+          p {
+            color: $red;
+          }
+        }
+
+        &.green {
+          div::before {
+            background-color: $green;
+          }
+
+          svg path {
+            fill: $green;
+          }
+
+          p {
+            color: $green;
+          }
+        }
+      }
+
+      div {
+        margin-right: 10px;
+        position: relative;
+        display: flex;
+
+        &::before {
+          content: "";
+          position: absolute;
+          display: block;
+          width: 1px;
+          height: 1px;
+          padding: 14px;
+          border-radius: 50%;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0.15;
+        }
+      }
+
+      .info {
+        font-size: 0.75rem;
       }
     }
   }

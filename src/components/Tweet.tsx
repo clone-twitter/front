@@ -75,25 +75,24 @@ const Tweet = ({text, stats, name, id, created, img, avatar, theme}: Props) => {
             stat={stats.comments}
             picto="Comment"
             theme={theme}
-            state="Default"
+            color="blue"
           />
           <Tweetaction
             stat={stats.retweets}
             picto="Retweet"
             theme={theme}
-            state="Default"
+            color="green"
           />
           <Tweetaction
             stat={stats.likes}
             picto="Like"
             theme={theme}
-            state="Default"
+            color="red"
           />
           <Tweetaction
-            stat={stats.shares}
             picto="Share"
             theme={theme}
-            state="Default"
+            color="blue"
           />
         </footer>
       </main>

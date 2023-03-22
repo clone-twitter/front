@@ -10,10 +10,9 @@ import Tweet from './components/Tweet';
 function App() {
   const [theme, SetTheme] = useState("DarkTheme")
   const stats = {
-    comments: 0,
-    retweets: 0,
-    likes: 0,
-    shares: 0
+    comments: 12,
+    retweets: 153,
+    likes: 898,
   }
     
   return (
