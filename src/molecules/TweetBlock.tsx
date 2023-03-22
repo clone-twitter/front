@@ -41,6 +41,7 @@ const TweetBlock = ({img, theme, type, state, placeholder}: Props) => {
                     theme={theme}
                     name={name}
                     state={state}
+                    key={name}
                   />
                 )
               })
