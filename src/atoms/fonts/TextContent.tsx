@@ -1,4 +1,5 @@
 import React from "react";
+import Linkify from "react-linkify"
 
 interface Props {
   text: string,
@@ -6,9 +7,12 @@ interface Props {
 }
 
 const Textcontent = ({text, theme}: Props) => {
+
   return (
     <p className={`content ${theme}`}>
-      {text}
+      <Linkify>
+        {text}
+      </Linkify>
     </p>
   )
 }

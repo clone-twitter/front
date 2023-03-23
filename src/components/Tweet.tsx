@@ -30,7 +30,7 @@ const Tweet = ({text, stats, name, id, created, img, avatar, theme}: Props) => {
   const formatDate = () => {
     dayjs().to(dayjs(created))
     return "23s"
-  } 
+  }
 
   return (
     <div className="tweet">
