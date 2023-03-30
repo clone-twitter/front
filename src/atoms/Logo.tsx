@@ -12,9 +12,9 @@ const Logo = ({theme, name, state}: Props) => {
     <span className="logo">
       {
         state ? (
-          <img src={`${process.env.PUBLIC_URL}/icons/${theme}/${name}/${state}.svg`} alt={name} />
+          <img src={`/icons/${theme}/${name}/${state}.svg`} alt={name} />
         ) : (
-          <img src={`${process.env.PUBLIC_URL}/icons/${theme}/${name}.svg`} alt={name} />
+          <img src={`/icons/${theme}/${name}.svg`} alt={name} />
         )
       }
       

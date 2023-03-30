@@ -72,7 +72,7 @@ const SideMenu = ({theme, img, name, id}: Props) => {
     <header className="side_menu">
       <div className="top">
         <h1>
-          <img src={`${process.env.PUBLIC_URL}/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
+          <img src={`/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
         </h1>
         <div className="menu_wrap">
           {
