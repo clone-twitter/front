@@ -1,17 +1,28 @@
 import React from "react";
-import Linkify from "react-linkify"
+import "linkify-plugin-mention";
+import Linkify from "linkify-react"
+import "linkify-plugin-hashtag";
+
 
 interface Props {
   text: string,
-  theme: 'DarkTheme' | 'LightTheme'
+  theme: 'DarkTheme' | 'LightTheme',
 }
 
 const Textcontent = ({text, theme}: Props) => {
 
+  const options = {
+    formatHref: {
+      mention: (href: string) => href,
+    },
+  };
+
   return (
     <p className={`content ${theme}`}>
-      <Linkify>
-        {text}
+      <Linkify options={options}>
+        {
+          text
+        }
       </Linkify>
     </p>
   )
