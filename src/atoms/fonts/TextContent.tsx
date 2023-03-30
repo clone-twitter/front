@@ -14,6 +14,7 @@ const Textcontent = ({text, theme}: Props) => {
   const options = {
     formatHref: {
       mention: (href: string) => href,
+      hashtag: (href: string) => `/hashtag/${href.slice(1)}`
     },
   };
 
