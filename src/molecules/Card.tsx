@@ -1,8 +1,8 @@
 import React, { PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
-import Subtitle from "../atoms/fonts/Subtitle";
 import { Theme } from "../interfaces/Theme";
 import { useNavigate } from "react-router-dom";
+import Title from "../atoms/fonts/Title";
 
 interface Props {
   text: string,
@@ -20,8 +20,8 @@ const Card = (props: PropsWithChildren<Props>) => {
   return (
     <div className="card">
       <header>
-        <Subtitle
-          text={props.text}
+        <Title
+          title={props.text}
           theme={props.theme}
         />
       </header>

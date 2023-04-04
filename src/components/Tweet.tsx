@@ -46,15 +46,19 @@ const Tweet = ({text, stats, name, id, created, img, avatar, theme}: Props) => {
             text={name}
             theme={theme}
           />
-          <Textinfo
-            text={id}
-            theme={theme}
-          />
-          <p>•</p>
-          <Textinfo
-            text={formatDate()}
-            theme={theme}
-          />
+          <div className="info_wrap">
+            <Textinfo
+              text={id}
+              theme={theme}
+            />
+            <p className="separator">
+              <span>.</span>
+            </p>
+            <Textinfo
+              text={formatDate()}
+              theme={theme}
+            />
+          </div>
         </header>
         <div className="content">
           <div className="text_tweet">

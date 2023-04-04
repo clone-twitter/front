@@ -8,6 +8,7 @@ import Tweet from './components/Tweet';
 import Profile from './molecules/Profile';
 import Search from './molecules/Search';
 import Card from './molecules/Card';
+import News from './molecules/News';
 
 
 function App() {
@@ -58,6 +59,33 @@ function App() {
               theme={theme as Theme}
             />
             <Card
+              text='Tendances pour vous'
+              theme={theme as Theme}
+              link="/trends"
+            >
+              <News
+                theme={theme as Theme}
+                date="Hier"
+                topic="Inflation"
+                content="L'Europe en hausse prudente avant un indicateur d'inflation en zone euro."
+                trend='Populaire dans #Ukraine'
+              />
+              <News
+                theme={theme as Theme}
+                date="Hier"
+                topic="Inflation"
+                content="L'Europe en hausse prudente avant un indicateur d'inflation en zone euro."
+                trend='Populaire dans #Ukraine'
+              />
+              <News
+                theme={theme as Theme}
+                date="Hier"
+                topic="Inflation"
+                content="L'Europe en hausse prudente avant un indicateur d'inflation en zone euro."
+                trend='Populaire dans #Ukraine'
+              />
+            </Card>
+            <Card
               text="Qui suivre ?"
               theme={theme as Theme}
               link="/news"
@@ -77,7 +105,6 @@ function App() {
                 isButtonActive={true}
               />
             </Card>
-            
           </div>
         </main>
       </div>

@@ -19,14 +19,30 @@
       display: flex;
       padding: 10px 15px 5px 0;
       flex-basis: max-content;
+      align-items: center;
 
       h3 {
         margin-right: 5px;
       }
 
+      .info_wrap {
+        display: flex;
+        align-items: stretch;
+      }
       p {
         margin-right: 5px;
         color: $dark6;
+        display: flex;
+        align-items: center;
+
+        &.separator {
+          display: flex;
+          align-items: center;
+        }
+
+        span {
+          display: inline;
+        }
       }
     }
 

@@ -7,6 +7,7 @@ $v_padding: 10px;
   background-color: $dark2;
   box-sizing: border-box;
   overflow: hidden;
+  margin-bottom: 10px;
 
   > * {
     width: 100%;
@@ -43,6 +44,70 @@ $v_padding: 10px;
 
       &:not(:first-child) {
         padding-top: $v_padding;
+      }
+    }
+
+    .news {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+
+      &:not(:last-child) {
+        padding-bottom: $v_padding;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 200%;
+          height: 1px;
+          left: -$h_padding;
+          bottom: 0;
+          background-color: $dark4;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: $v_padding;
+      }
+
+      .left {
+        .info {
+          display: flex;
+          margin-bottom: 5px;
+
+          .separator {
+            padding: 0 5px;
+
+            span {
+              color: $dark6;
+            }
+          }
+        }
+
+        .content {
+          margin-bottom: 5px;
+        }
+      }
+
+      .right {
+        .img {
+          height: 70px;
+          width: 70px;
+          border-radius: 12px;
+          background-color: $dark4;
+          margin-left: 15px;
+          overflow: hidden;
+
+          img {
+            height: 70px;
+            width: 70px;
+            -o-object-fit: cover;
+            -o-object-position: center;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
       }
     }
   }
