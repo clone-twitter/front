@@ -1,0 +1,60 @@
+$h_padding: 15px;
+$v_padding: 10px;
+
+.card {
+  width: 100%;
+  border-radius: 16px;
+  background-color: $dark2;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  > * {
+    width: 100%;
+  }
+
+  header {
+    padding: $h_padding;
+    box-sizing: border-box;
+    border-bottom: 1px solid $dark4;
+  }
+
+  main {
+    padding: $v_padding;
+    box-sizing: border-box;
+    display: block;
+
+    .profile_wrap {
+      margin-bottom: 0;
+      position: relative;
+
+      &:not(:last-child) {
+        padding-bottom: $v_padding;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 200%;
+          height: 1px;
+          left: -$h_padding;
+          bottom: 0;
+          background-color: $dark4;
+        }
+      }
+
+      &:not(:first-child) {
+        padding-top: $v_padding;
+      }
+    }
+  }
+
+  footer {
+    padding: $h_padding;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-top: 1px solid $dark4;
+
+    &:hover {
+      background-color: $dark3;
+    }
+  }
+}

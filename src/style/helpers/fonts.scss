@@ -131,6 +131,12 @@ textarea {
 }
 
 a {
+  font-family: TwitterChirp;
   color: $primary;
   text-decoration: none;
+
+  &:visited {
+    color: $primary;
+    text-decoration: inherit;
+  }
 }

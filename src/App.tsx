@@ -7,6 +7,7 @@ import Spacer from './atoms/Spacer';
 import Tweet from './components/Tweet';
 import Profile from './molecules/Profile';
 import Search from './molecules/Search';
+import Card from './molecules/Card';
 
 
 function App() {
@@ -56,13 +57,27 @@ function App() {
               placeholder='Recherche Twitter'
               theme={theme as Theme}
             />
-            <Profile 
-              img='goku.jpeg'
-              theme='DarkTheme'
-              name="This is my name"
-              id="myTwitterId"
-              isButtonActive={true}
-            />
+            <Card
+              text="Qui suivre ?"
+              theme={theme as Theme}
+              link="/news"
+            >
+              <Profile 
+                img='goku.jpeg'
+                theme='DarkTheme'
+                name="This is my name"
+                id="myTwitterId"
+                isButtonActive={true}
+              />
+              <Profile 
+                img='goku.jpeg'
+                theme='DarkTheme'
+                name="This is my name"
+                id="myTwitterId"
+                isButtonActive={true}
+              />
+            </Card>
+            
           </div>
         </main>
       </div>
