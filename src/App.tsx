@@ -9,6 +9,7 @@ import Profile from './molecules/Profile';
 import Search from './molecules/Search';
 import Card from './molecules/Card';
 import News from './molecules/News';
+import Textinfo from './atoms/fonts/TextInfo';
 
 
 function App() {
@@ -105,6 +106,11 @@ function App() {
                 isButtonActive={true}
               />
             </Card>
+            <Textinfo
+              text="Terms of Service Privacy Policy Cookie Policy Ads info More © 2021 Twitter, Inc."
+              theme={theme as Theme}
+              linkify={false}
+            />
           </div>
         </main>
       </div>
