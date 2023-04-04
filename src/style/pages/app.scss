@@ -1,8 +1,11 @@
 .App {
   min-height: 100vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+
+  > .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 
   &.LightTheme {
     background-color: $white;
@@ -13,6 +16,6 @@
   }
 
   .main_content {
-    width: 598px; // TODO : Responsive width
+    width: $main_content_width;
   }
 }

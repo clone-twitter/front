@@ -1,5 +1,6 @@
 import React from "react";
 import Avatar from "../atoms/Avatar";
+import Button from "../atoms/Button";
 import Subtitle from "../atoms/fonts/Subtitle";
 import Textinfo from "../atoms/fonts/TextInfo";
 import Logo from "../atoms/Logo";
@@ -9,10 +10,11 @@ interface Props {
   theme: Theme,
   img: string,
   name: string,
-  id: string
+  id: string,
+  isButtonActive?: boolean
 }
 
-const Profile = ({img, theme, name, id}: Props) => {
+const Profile = ({img, theme, name, id, isButtonActive}: Props) => {
   return (
     <div className="profile_wrap">
       <div className="wrapper">
@@ -31,11 +33,21 @@ const Profile = ({img, theme, name, id}: Props) => {
           />
         </div>
       </div>
-      <Logo 
-        theme={theme}
-        name="More"
-        state="Default"
-      />
+      {
+        isButtonActive ? (
+          <Button
+            size="small"
+            type="secondary"
+            text="Suivre"
+          />
+        ) : (
+          <Logo 
+            theme={theme}
+            name="More"
+            state="Default"
+          />
+        )
+      }
     </div>
     
   )

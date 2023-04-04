@@ -1,0 +1,39 @@
+.search {
+  width: 100%;
+  display: flex;
+  background-color: $dark3;
+  padding: 8px 20px;
+  border-radius: 9999px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+
+  &.active {
+    border: 1px solid $primary;
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin-right: 10px;
+      height: 20px;
+
+      img {
+        display: block;
+        height: 100%;
+      }
+    }
+  }
+
+  input {
+    background-color: transparent;
+    border: 0;
+    color: $white;
+    font-size: 0.875rem;
+
+    &::placeholder {
+      font-size: 0.875rem;
+    }
+  }
+}

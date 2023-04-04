@@ -21,6 +21,11 @@
   &.secondary {
     background-color: transparent;
     color: $primary;
+
+    &:hover {
+      background-color: $primary;
+      color: $white;
+    }
   }
 
   &.big {

@@ -1,3 +1,9 @@
+$default_width: 72%;
+$main_width: $default_width;
+$main_content_width: $default_width;
+$side_menu_width: 100% - $default_width;
+$side_column_width: 115% - $default_width;
+
 * {
   padding: 0;
   margin: 0;
@@ -11,6 +17,7 @@
     box-sizing: border-box;
     height: 100%;
     display: flex;
+    width: $main_width;
 
     .main_content {
       min-height: 100vh;
