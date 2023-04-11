@@ -3,8 +3,13 @@ import './style/main.scss'
 import Home from './pages/Home';
 import { Theme } from './interfaces/Theme';
 import { Route, Routes, useMatch, useNavigate } from 'react-router-dom';
-import Explorer from './pages/Explorer';
+import Explore from './pages/Explore';
 import Layout from './pages/Layout';
+import Notifications from './pages/Notifications';
+import Messages from './pages/Messages';
+import Bookmarks from './pages/Bookmarks';
+import Lists from './pages/Lists';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -30,7 +35,12 @@ function App() {
           element={<Layout theme={theme as Theme}/>}
         >
           <Route path='/home' index element={<Home theme={theme as Theme} stats={stats}/>}/>
-          <Route path="/explore" element={<Explorer />}/>
+          <Route path="/explore" element={<Explore />}/>
+          <Route path="/notifications" element={<Notifications />}/>
+          <Route path="/messages" element={<Messages />}/>
+          <Route path="/bookmarks" element={<Bookmarks />}/>
+          <Route path="/lists" element={<Lists />}/>
+          <Route path="/profile" element={<Profile />}/>
         </Route>
       </Routes>
     </div>

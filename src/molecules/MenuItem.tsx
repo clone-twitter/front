@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Title from '../atoms/fonts/Title'
 import Logo from '../atoms/Logo'
 import { State, Theme } from "../interfaces/Theme";
-import { Link } from "react-router-dom";
+import { NavLink, useMatch } from "react-router-dom";
 
 interface Props {
   theme: Theme,
   name: string,
-  state?: State,
   title: string,
-  handleClick: React.MouseEventHandler<HTMLElement>
 }
 
-const MenuItem = ({theme, name, state, title, handleClick}: Props) => {
+const MenuItem = ({theme, name, title}: Props) => {
+
+  const match = useMatch(`/${name.toLowerCase()}`)
+  const [state, setState] = useState<State>("Default")
+
+  useEffect(() => {
+    setState("Default")
+    match && setState("Blue")
+  }, [match])
+
   return (
-    <Link to={`/${name.toLowerCase()}`}>
+    <NavLink to={`/${name.toLowerCase()}`}>
       <div 
         className="menu_item"
-        onClick={handleClick}
       >
-        
         <Logo
           theme={theme}
           name={name}
@@ -31,7 +36,7 @@ const MenuItem = ({theme, name, state, title, handleClick}: Props) => {
           theme={theme}
         />
       </div>
-    </Link>
+    </NavLink>
   )
 }
 

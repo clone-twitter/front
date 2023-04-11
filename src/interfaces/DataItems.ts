@@ -4,5 +4,5 @@ export interface DataItems {
   id: number,
   name: string,
   title: string,
-  state: State
+  state: State,
 }

@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const Explorer = () => {
+const Explore = () => {
   return (
     <div className="explorer">
       <div className="explorer__header">
@@ -19,4 +19,4 @@ const Explorer = () => {
   );
 };
 
-export default Explorer;
+export default Explore;

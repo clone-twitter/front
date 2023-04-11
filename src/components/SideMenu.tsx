@@ -94,7 +94,6 @@ const SideMenu = ({theme, img, name, id}: Props) => {
                   name={item.name}
                   title={item.title}
                   state={item.state as unknown as State}
-                  handleClick={() => handleItem(item.id)}
                 />
               )
             })
