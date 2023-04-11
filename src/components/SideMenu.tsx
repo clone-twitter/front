@@ -67,6 +67,16 @@ const SideMenu = ({theme, img, name, id}: Props) => {
 
   const [menuItems, setMenuItems] = useState(dataItems)
 
+  const handleItem = (id: number) => {
+    const nextItem = menuItems.find(item => item.id === id)
+
+    // setMenuItems((items) => {
+    //   return {
+    //     ...items,
+    //     items: nextItem
+    //   }
+    // })
+  }
 
   return (
     <header className="side_menu">
@@ -84,6 +94,7 @@ const SideMenu = ({theme, img, name, id}: Props) => {
                   name={item.name}
                   title={item.title}
                   state={item.state as unknown as State}
+                  handleClick={() => handleItem(item.id)}
                 />
               )
             })
