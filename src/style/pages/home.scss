@@ -1,4 +1,17 @@
 .home {
   display: flex;
-  align-items: center;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-grow: 1;
+  flex-basis: auto;
+
+  .main_content {
+    min-height: 100vh;
+    max-width: 600px;
+  }
+
+  .side_column {
+    min-height: 100vh;
+    border-left: $border;
+  }
 }

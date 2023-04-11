@@ -80,40 +80,41 @@ const SideMenu = ({theme, img, name, id}: Props) => {
 
   return (
     <header className="side_menu">
-      <div className="top">
-        <h1>
-          <img src={`/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
-        </h1>
-        <div className="menu_wrap">
-          {
-            menuItems.map(item => {
-              return (
-                <MenuItem
-                  key={item.id}
-                  theme={theme}
-                  name={item.name}
-                  title={item.title}
-                  state={item.state as unknown as State}
-                />
-              )
-            })
-          }
+      <div className="wrapper">
+        <div className="top">
+          <h1>
+            <img src={`/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
+          </h1>
+          <div className="menu_wrap">
+            {
+              menuItems.map(item => {
+                return (
+                  <MenuItem
+                    key={item.id}
+                    theme={theme}
+                    name={item.name}
+                    title={item.title}
+                  />
+                )
+              })
+            }
+          </div>
+          <div className="btn_wrap">
+            <Button 
+              size="big"
+              type="primary"
+              text="Tweeter"
+            />
+          </div>
         </div>
-        <div className="btn_wrap">
-          <Button 
-            size="big"
-            type="primary"
-            text="Tweeter"
+        <div className="bottom">
+          <Profile
+            theme={theme}
+            img={img}
+            name={name}
+            id={id}
           />
         </div>
-      </div>
-      <div className="bottom">
-        <Profile
-          theme={theme}
-          img={img}
-          name={name}
-          id={id}
-        />
       </div>
     </header>
   )
