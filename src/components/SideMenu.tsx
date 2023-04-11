@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import MenuItem from "../molecules/MenuItem";
-import { State, Theme } from "../interfaces/Theme";
+import { Theme } from "../interfaces/Theme";
 import { DataItems } from "../interfaces/DataItems";
 import Button from "../atoms/Button";
 import Profile from "../molecules/Profile";
@@ -66,17 +66,6 @@ const dataItems: DataItems[] = [
 const SideMenu = ({theme, img, name, id}: Props) => {
 
   const [menuItems, setMenuItems] = useState(dataItems)
-
-  const handleItem = (id: number) => {
-    const nextItem = menuItems.find(item => item.id === id)
-
-    // setMenuItems((items) => {
-    //   return {
-    //     ...items,
-    //     items: nextItem
-    //   }
-    // })
-  }
 
   return (
     <header className="side_menu">
