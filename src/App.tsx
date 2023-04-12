@@ -38,7 +38,6 @@ function App() {
           <Route path="/bookmarks" element={<Bookmarks />}/>
           <Route path="/lists" element={<Lists />}/>
           <Route path="/profile" element={<Profile />}/>
-          {/* <Route path="*" element={<Error />}/> */}
         </Route>
       
     )
