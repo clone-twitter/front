@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style/main.scss'
 import Home from './pages/Home';
 import { Theme } from './interfaces/Theme';
-import { Route, Routes, useMatch, useNavigate } from 'react-router-dom';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import Explore from './pages/Explore';
 import Layout from './pages/Layout';
 import Notifications from './pages/Notifications';
@@ -10,29 +10,26 @@ import Messages from './pages/Messages';
 import Bookmarks from './pages/Bookmarks';
 import Lists from './pages/Lists';
 import Profile from './pages/Profile';
+import Error from './pages/Error';
 
 
 function App() {
-  const [theme, SetTheme] = useState("DarkTheme");
+
+  const [theme, setTheme] = useState("DarkTheme" as Theme)
+
   const stats = {
     comments: 12,
     retweets: 153,
     likes: 898,
   }
 
-  const match = useMatch("/")
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    match?.pathname === "/" && navigate("/home")
-  }, [match, navigate])
-    
-  return (
-    <div className={`App ${theme}`}>
-      <Routes>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      
         <Route 
           path="/" 
           element={<Layout theme={theme as Theme}/>}
+          errorElement={<Error theme={theme as Theme}/>}
         >
           <Route path='/home' index element={<Home theme={theme as Theme} stats={stats}/>}/>
           <Route path="/explore" element={<Explore />}/>
@@ -42,7 +39,13 @@ function App() {
           <Route path="/lists" element={<Lists />}/>
           <Route path="/profile" element={<Profile />}/>
         </Route>
-      </Routes>
+      
+    )
+  );
+    
+  return (
+    <div className={`App ${theme}`}>
+      <RouterProvider router={router}/>
     </div>
   );
 }
