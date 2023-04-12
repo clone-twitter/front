@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style/main.scss'
 import Home from './pages/Home';
 import { Theme } from './interfaces/Theme';
-import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements, useMatch, useNavigate } from 'react-router-dom';
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
 import Explore from './pages/Explore';
 import Layout from './pages/Layout';
 import Notifications from './pages/Notifications';
