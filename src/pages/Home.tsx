@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TopBlock from "../components/TopBlock";
 import Spacer from "../atoms/Spacer";
 import { Theme } from "../interfaces/Theme";
 import Tweet from "../components/Tweet";
-import { Stats } from "../interfaces/Tweet";
+import { ITweet } from "../interfaces/Tweet";
 import Search from "../molecules/Search";
 import Card from "../molecules/Card";
 import News from "../molecules/News";
 import Profile from "../molecules/Profile";
 import Textinfo from "../atoms/fonts/TextInfo";
+import { TweetsService } from "../services/tweetsService";
 
 interface Props {
   theme: Theme,
-  stats: Stats
 }
 
-const Home = ({theme, stats}: Props) => {
+const Home = ({theme}: Props) => {
+
+  const tweet = new TweetsService()
+
+  const [tweets, setTweets] = useState<ITweet>()
+
+  useEffect(() => {
+    const tweets = async () => {
+      const response = await tweet.getTweets()
+      return response
+    }
+
+    tweets().then((response) => {
+      setTweets(response)
+    })
+  }, [])
+
+  console.log(tweets)
   return (
     <div className="home">
       <div className="main_content">
@@ -30,7 +47,7 @@ const Home = ({theme, stats}: Props) => {
         <Spacer
           theme={theme as unknown as Theme}
         />
-        <Tweet 
+        {/* <Tweet 
           text='GPT-4 is now available to everyone with a crypto wallet.
           Try GPT-4 today: https://beacons.ai/openai.gpt4
           (A surprise $GPT coin may be airdropped to users...) (@SinouuuJ) #OpenAI'
@@ -40,7 +57,23 @@ const Home = ({theme, stats}: Props) => {
           created={new Date}
           avatar="goku.jpeg"
           theme={theme as unknown as Theme}
-        />
+        /> */}
+        {tweets?.data && tweets.data.map((tweet: any) => {
+          return (
+            <Tweet
+              text={tweet.attributes.text_content}
+              total_comments={tweet.attributes.total_comments}
+              total_likes={tweet.attributes.total_likes}
+              total_retweets={tweet.attributes.total_retweets}
+              name={tweet.attributes.users_permissions_user.data.attributes.tweet_name}
+              id={`@${tweet.attributes.users_permissions_user.data.attributes.username}`}
+              key={tweet.id}
+              created={tweet.attributes.created_at}
+              avatar={tweet.attributes.users_permissions_user.data.attributes.avatar.data.attributes.url}
+              theme={theme as unknown as Theme}
+            />
+          )
+        })}
       </div>
       <div className="side_column">
         <Search 

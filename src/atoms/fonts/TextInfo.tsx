@@ -4,7 +4,7 @@ import { Theme } from "../../interfaces/Theme";
 import "linkify-plugin-hashtag"
 
 interface Props {
-  text?: string,
+  text?: string | 0,
   theme: Theme,
   linkify?: boolean
 }

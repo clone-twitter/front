@@ -38,7 +38,7 @@ const Tweetaction = ({picto, stat, theme, color}: Props) => {
         />
       }
       <Textinfo
-        text={stat ? stat.toString() : undefined}
+        text={stat && `${stat}`}
         theme={theme}
       />
     </div>

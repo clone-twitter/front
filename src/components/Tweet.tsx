@@ -3,7 +3,6 @@ import Avatar from "../atoms/Avatar";
 import Subtitle from "../atoms/fonts/Subtitle";
 import Textinfo from "../atoms/fonts/TextInfo";
 import { Theme } from "../interfaces/Theme";
-import { Stats } from "../interfaces/Tweet";
 import duration from "dayjs/plugin/duration";
 import relativeTime from "dayjs/plugin/relativeTime";
 import dayjs from "dayjs";
@@ -16,7 +15,9 @@ dayjs.extend(duration)
 
 interface Props {
   text: string,
-  stats: Stats,
+  total_comments: number,
+  total_likes: number,
+  total_retweets: number,
   name: string,
   id: string,
   created: Date,
@@ -25,7 +26,7 @@ interface Props {
   theme: Theme,
 }
 
-const Tweet = ({text, stats, name, id, created, img, avatar, theme}: Props) => {
+const Tweet = ({text, total_comments, total_likes, total_retweets, name, id, created, img, avatar, theme}: Props) => {
 
   const formatDate = () => {
     dayjs().to(dayjs(created))
@@ -76,19 +77,19 @@ const Tweet = ({text, stats, name, id, created, img, avatar, theme}: Props) => {
         </div>
         <footer>
           <Tweetaction
-            stat={stats.comments}
+            stat={total_comments}
             picto="Comment"
             theme={theme}
             color="blue"
           />
           <Tweetaction
-            stat={stats.retweets}
+            stat={total_retweets}
             picto="Retweet"
             theme={theme}
             color="green"
           />
           <Tweetaction
-            stat={stats.likes}
+            stat={total_likes}
             picto="Like"
             theme={theme}
             color="red"

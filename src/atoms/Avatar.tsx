@@ -8,7 +8,7 @@ interface Props {
 const Avatar = ({img, size}: Props) => {
   return (
     <div className={`avatar ${size}`}>
-      <img src={`/avatar/${img}`} alt="avatar"/>
+      <img src={`http://localhost:1337${img}`} alt="avatar"/>
     </div>
   )
 }
