@@ -31,8 +31,7 @@ const Home = ({theme}: Props) => {
       setTweets(response)
     })
   }, [])
-
-  console.log(tweets)
+  
   return (
     <div className="home">
       <div className="main_content">
@@ -47,17 +46,6 @@ const Home = ({theme}: Props) => {
         <Spacer
           theme={theme as unknown as Theme}
         />
-        {/* <Tweet 
-          text='GPT-4 is now available to everyone with a crypto wallet.
-          Try GPT-4 today: https://beacons.ai/openai.gpt4
-          (A surprise $GPT coin may be airdropped to users...) (@SinouuuJ) #OpenAI'
-          stats={stats}
-          name="This is my Name"
-          id="@MyTwitterId"
-          created={new Date}
-          avatar="goku.jpeg"
-          theme={theme as unknown as Theme}
-        /> */}
         {tweets?.data && tweets.data.map((tweet: any) => {
           return (
             <Tweet
