@@ -17,12 +17,6 @@ function App() {
 
   const [theme, setTheme] = useState("DarkTheme" as Theme)
 
-  const stats = {
-    comments: 12,
-    retweets: 153,
-    likes: 898,
-  }
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       
@@ -31,7 +25,7 @@ function App() {
           element={<Layout theme={theme as Theme}/>}
           errorElement={<Error theme={theme as Theme}/>}
         >
-          <Route path='/home' index element={<Home theme={theme as Theme} stats={stats}/>}/>
+          <Route path='/home' index element={<Home theme={theme as Theme}/>}/>
           <Route path="/explore" element={<Explore />}/>
           <Route path="/notifications" element={<Notifications />}/>
           <Route path="/messages" element={<Messages />}/>
