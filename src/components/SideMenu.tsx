@@ -4,12 +4,10 @@ import { Theme } from "../interfaces/Theme";
 import { DataItems } from "../interfaces/DataItems";
 import Button from "../atoms/Button";
 import Profile from "../molecules/Profile";
+import useAuth from "../hooks/auth";
 
 interface Props {
-  theme: Theme,
-  img: string,
-  name: string,
-  id: string,
+  theme: Theme
 }
 
 const dataItems: DataItems[] = [
@@ -63,9 +61,10 @@ const dataItems: DataItems[] = [
   },
 ]
 
-const SideMenu = ({theme, img, name, id}: Props) => {
+const SideMenu = ({theme}: Props) => {
 
   const [menuItems, setMenuItems] = useState(dataItems)
+  const auth = useAuth()
 
   return (
     <header className="side_menu">
@@ -99,9 +98,7 @@ const SideMenu = ({theme, img, name, id}: Props) => {
         <div className="bottom">
           <Profile
             theme={theme}
-            img={img}
-            name={name}
-            id={id}
+            user={auth?.user}
           />
         </div>
       </div>

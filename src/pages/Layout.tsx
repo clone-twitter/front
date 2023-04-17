@@ -20,9 +20,6 @@ const Layout = ({theme}: Props) => {
     <div className="container">
       <SideMenu
         theme={theme as Theme}
-        img="goku.jpeg"
-        name="My Name"
-        id="ItsMyId"
       />
       <main>
         <Outlet />
