@@ -15,7 +15,7 @@ export let AuthContext = createContext<AuthContextType | null>(null);
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
   let [user, setUser] = useState<IUser>();
-  let [auth, setAuth] = useState<boolean>(false);
+  let [auth, setAuth] = useState<boolean>(true);
   
   const userService = new UserService()
   const authService = new AuthService()

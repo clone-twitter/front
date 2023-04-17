@@ -5,15 +5,12 @@ export interface IUser {
   provider: string;
   confirmed: boolean;
   blocked: boolean;
-  role: {
-    id: number;
-    name: string;
-    description: string;
-    type: string;
-  };
-  created_at: Date;
-  updated_at: Date;
+  createdAt: Date;
+  updatedAt: Date;
   avatar: IAvatar;
+  cover: any;
+  biography: string;
+  tweet_name: string;
 }
 
 export interface IAvatar {
