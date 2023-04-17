@@ -10,6 +10,7 @@ import News from "../molecules/News";
 import Profile from "../molecules/Profile";
 import Textinfo from "../atoms/fonts/TextInfo";
 import { TweetsService } from "../services/tweetsService";
+import { UserService } from "../services/userService";
 
 interface Props {
   theme: Theme,
@@ -18,6 +19,7 @@ interface Props {
 const Home = ({theme}: Props) => {
 
   const tweet = new TweetsService()
+  const userService = new UserService()
 
   const [tweets, setTweets] = useState<ITweet>()
 

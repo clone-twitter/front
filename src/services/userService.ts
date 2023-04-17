@@ -1,5 +1,5 @@
 export class UserService {
-  fetchAuthUser() {
+  private fetchAuthUser() {
     const options = {
       method: 'GET',
       headers: {
@@ -18,7 +18,7 @@ export class UserService {
   }
 
   
-  async getUserByUsername() {
+  public async getAuthUser() {
     const user = await this.fetchAuthUser();
     return user;
   }
