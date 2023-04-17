@@ -3,18 +3,19 @@ import { UserService } from "../services/userService";
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/auth";
 import { AuthService } from "../services/authService";
+import { IUser } from "../interfaces/User";
 
 export interface AuthContextType {
-  user: any;
-  auth: any;
+  user?: IUser;
+  auth: boolean;
 }
 
 export let AuthContext = createContext<AuthContextType | null>(null);
 
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
-  let [user, setUser] = useState<any>(null);
-  let [auth, setAuth] = useState<any>(null);
+  let [user, setUser] = useState<IUser>();
+  let [auth, setAuth] = useState<boolean>(false);
   
   const userService = new UserService()
   const authService = new AuthService()
