@@ -19,7 +19,6 @@ interface Props {
 const Home = ({theme}: Props) => {
 
   const tweet = new TweetsService()
-  const userService = new UserService()
 
   const [tweets, setTweets] = useState<ITweet>()
 
