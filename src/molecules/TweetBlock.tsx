@@ -22,7 +22,7 @@ const TweetBlock = ({img, theme, type, state, placeholder}: Props) => {
     <div className="tweet_block">
       <div className="left">
         <Avatar
-          img={img}
+          img_url={img}
           size="medium"
         />
       </div>

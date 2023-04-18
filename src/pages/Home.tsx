@@ -10,6 +10,7 @@ import News from "../molecules/News";
 import Profile from "../molecules/Profile";
 import Textinfo from "../atoms/fonts/TextInfo";
 import { TweetsService } from "../services/tweetsService";
+import useAuth from "../hooks/auth";
 
 interface Props {
   theme: Theme,
@@ -20,6 +21,7 @@ const Home = ({theme}: Props) => {
   const tweet = new TweetsService()
 
   const [tweets, setTweets] = useState<ITweet>()
+  const auth = useAuth()
 
   useEffect(() => {
     const tweets = async () => {
@@ -39,7 +41,7 @@ const Home = ({theme}: Props) => {
           theme={theme as unknown as Theme}
           title="Accueil"
           placeholder='Quoi de neuf ?'
-          img='goku.jpeg'
+          img={auth?.user?.avatar.url!}
           state="Default"
           type='primary'
         />

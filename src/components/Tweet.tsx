@@ -37,7 +37,7 @@ const Tweet = ({text, total_comments, total_likes, total_retweets, name, id, cre
     <div className="tweet">
       <header>
         <Avatar
-          img={avatar}
+          img_url={avatar}
           size="medium"
         />
       </header>
