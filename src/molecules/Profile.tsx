@@ -5,7 +5,7 @@ import Subtitle from "../atoms/fonts/Subtitle";
 import Textinfo from "../atoms/fonts/TextInfo";
 import Logo from "../atoms/Logo";
 import { Theme } from "../interfaces/Theme";
-import { IPicture, IUser } from "../interfaces/User";
+import { IUser } from "../interfaces/User";
 
 interface Props {
   theme: Theme,
