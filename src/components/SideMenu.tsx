@@ -15,49 +15,57 @@ const dataItems: DataItems[] = [
     id: 0,
     name: "Home",
     title: "Accueil",
-    state: "Blue"
+    state: "Blue",
+    protected: true
   },
   {
     id: 1,
     name: "Explore",
     title: "Explorer",
-    state: "Default"
+    state: "Default",
+    protected: false
   },
   {
     id: 2,
     name: "Notifications",
     title: "Notifications",
-    state: "Default"
+    state: "Default",
+    protected: true
   },
   {
     id: 3,
     name: "Messages",
     title: "Messages",
-    state: "Default"
+    state: "Default",
+    protected: true
   },
   {
     id: 4,
     name: "Bookmarks",
     title: "Signets",
-    state: "Default"
+    state: "Default",
+    protected: true
   },
   {
     id: 5,
     name: "Lists",
     title: "Listes",
-    state: "Default"
+    state: "Default",
+    protected: true
   },
   {
     id: 6,
     name: "Profile",
     title: "Profile",
-    state: "Default"
+    state: "Default",
+    protected: true
   },
   {
     id: 7,
     name: "More",
     title: "Plus",
-    state: "Default"
+    state: "Default",
+    protected: false
   },
 ]
 
@@ -73,27 +81,49 @@ const SideMenu = ({theme}: Props) => {
           <h1>
             <img src={`/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
           </h1>
-          <div className="menu_wrap">
-            {
-              menuItems.map(item => {
-                return (
-                  <MenuItem
-                    key={item.id}
-                    theme={theme}
-                    name={item.name}
-                    title={item.title}
-                  />
-                )
-              })
-            }
-          </div>
-          <div className="btn_wrap">
-            <Button 
-              size="big"
-              type="primary"
-              text="Tweeter"
-            />
-          </div>
+          {
+            auth?.auth ? (
+              <div className="menu_wrap">
+                {
+                  menuItems.map(item => {
+                    return (
+                      <MenuItem
+                        key={item.id}
+                        theme={theme}
+                        name={item.name}
+                        title={item.title}
+                      />
+                    )
+                  })
+                }
+              </div>
+            ) : (
+              <div className="menu_wrap">
+                {
+                  menuItems.filter(item => item.protected === false).map(item => {
+                    return (
+                      <MenuItem
+                        key={item.id}
+                        theme={theme}
+                        name={item.name}
+                        title={item.title}
+                      />
+                    )
+                  })
+                }
+              </div>
+            )
+          }
+          {
+            auth?.auth &&
+            <div className="btn_wrap">
+              <Button 
+                size="big"
+                type="primary"
+                text="Tweeter"
+              />
+            </div>
+          }
         </div>
         {
           auth?.auth &&

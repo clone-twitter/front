@@ -5,4 +5,5 @@ export interface DataItems {
   name: string,
   title: string,
   state: State,
+  protected: boolean,
 }
