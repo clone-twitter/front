@@ -33,7 +33,6 @@ const MenuItem = ({theme, name, title}: Props) => {
         <Title
           title={title}
           state={state}
-          theme={theme}
         />
       </div>
     </NavLink>
