@@ -1,0 +1,17 @@
+.trend_item {
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  padding: 12px 15px;
+
+  &:hover {
+    background-color: $dark2;
+  }
+
+  &_title {
+    margin-top: 2px;
+  }
+
+  &_trend {
+    margin-top: 4px;
+  }
+}

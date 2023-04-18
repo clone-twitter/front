@@ -1,11 +1,14 @@
 import React from "react";
+import useTheme from "../../hooks/theme";
 
 interface Props {
   text: string,
-  theme?: 'LightTheme' | 'DarkTheme'
 }
 
-const Subtitle = ({text, theme}: Props) => {
+const Subtitle = ({text}: Props) => {
+
+  const theme = useTheme()
+
   return (
     <h3 className={`${theme}`}>
       {text}

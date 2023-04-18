@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Title from '../atoms/fonts/Title'
-import Logo from '../atoms/Logo'
-import { State, Theme } from "../interfaces/Theme";
+import Title from '../../atoms/fonts/Title'
+import Logo from '../../atoms/Logo'
+import { State, Theme } from "../../interfaces/Theme";
 import { NavLink, useMatch } from "react-router-dom";
 
 interface Props {

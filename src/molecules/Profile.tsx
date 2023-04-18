@@ -24,11 +24,9 @@ const Profile = ({theme, user, isButtonActive}: Props) => {
         <div className="name_wrap">
           <Subtitle
             text={user?.tweet_name!}
-            theme={theme}
           />
           <Textinfo
             text={`@${user?.username}`}
-            theme={theme}
           />
         </div>
       </div>

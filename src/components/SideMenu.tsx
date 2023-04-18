@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import MenuItem from "../molecules/MenuItem";
+import MenuItem from "../molecules/items/MenuItem";
 import { Theme } from "../interfaces/Theme";
 import { DataItems } from "../interfaces/DataItems";
 import Button from "../atoms/Button";
@@ -95,12 +95,15 @@ const SideMenu = ({theme}: Props) => {
             />
           </div>
         </div>
-        <div className="bottom">
-          <Profile
-            theme={theme}
-            user={auth?.user}
-          />
-        </div>
+        {
+          auth?.auth &&
+          <div className="bottom">
+            <Profile
+              theme={theme}
+              user={auth?.user}
+            />
+          </div>
+        }
       </div>
     </header>
   )

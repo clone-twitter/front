@@ -41,7 +41,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
   }, []);
 
-  console.log('user', user)
+  console.log('authcontext', user, auth)
 
   return (
     <AuthContext.Provider value={{ user, auth }}>{children}</AuthContext.Provider>
@@ -53,7 +53,7 @@ export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   let location = useLocation();
 
   if (!auth?.auth) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/explore" state={{ from: location }} replace />;
   }
   console.log('auth', auth)
 

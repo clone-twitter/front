@@ -1,13 +1,16 @@
 import React from "react";
-import { State, Theme } from "../../interfaces/Theme";
+import { State } from "../../interfaces/Theme";
+import useTheme from "../../hooks/theme";
 
 interface Props {
   title: string,
-  theme: Theme,
   state?: State
 }
 
-const Title = ({title, theme, state}: Props) => {
+const Title = ({title, state}: Props) => {
+
+  const theme = useTheme()
+
   return (
     <h2 className={`${state} ${theme}`}>
       {title}

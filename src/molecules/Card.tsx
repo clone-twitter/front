@@ -6,7 +6,6 @@ import Title from "../atoms/fonts/Title";
 
 interface Props {
   text: string,
-  theme: Theme,
   link: string,
 }
 
@@ -22,7 +21,6 @@ const Card = (props: PropsWithChildren<Props>) => {
       <header>
         <Title
           title={props.text}
-          theme={props.theme}
         />
       </header>
       <main>

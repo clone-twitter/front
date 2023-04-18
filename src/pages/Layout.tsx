@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import SideMenu from "../components/SideMenu";
 import { Theme } from "../interfaces/Theme";
 import { Outlet, useMatch, useNavigate } from "react-router-dom";
+import SideColumn from "../components/SideColumn";
 
 interface Props {
   theme: Theme,

@@ -1,4 +1,6 @@
 .side_column {
   padding: 5px 0 5px 25px;
   width: 350px;
+  min-height: 100vh;
+  border-left: $border;
 }

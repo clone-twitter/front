@@ -12,6 +12,7 @@ import Lists from './pages/Lists';
 import Profile from './pages/Profile';
 import Error from './pages/Error';
 import AuthProvider, { RequireAuth } from './contexts/AuthContext';
+import ThemeProvider from './contexts/ThemeContext';
 
 
 function App() {
@@ -43,7 +44,9 @@ function App() {
   return (
     <div className={`App ${theme}`}>
       <AuthProvider>
-        <RouterProvider router={router}/>
+        <ThemeProvider>
+          <RouterProvider router={router}/>
+        </ThemeProvider>
       </AuthProvider>
     </div>
   );
