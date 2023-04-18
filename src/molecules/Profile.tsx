@@ -19,7 +19,7 @@ const Profile = ({theme, user, isButtonActive}: Props) => {
       <div className="wrapper">
         <Avatar
           size="small"
-          img_url={user?.avatar.url!}
+          img_url={user?.avatar?.url!}
         />
         <div className="name_wrap">
           <Subtitle

@@ -7,7 +7,7 @@ import { IUser } from "../interfaces/User";
 
 export interface AuthContextType {
   user?: IUser;
-  auth: boolean;
+  auth: boolean | null;
 }
 
 export let AuthContext = createContext<AuthContextType | null>(null);
@@ -15,7 +15,7 @@ export let AuthContext = createContext<AuthContextType | null>(null);
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
   let [user, setUser] = useState<IUser>();
-  let [auth, setAuth] = useState<boolean>(true);
+  let [auth, setAuth] = useState<boolean | null>(null);
   
   const userService = new UserService()
   const authService = new AuthService()
@@ -26,7 +26,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return response
     }
 
-    const auth = async (): Promise<boolean> => {
+    const auth = async (): Promise<boolean | null> => {
       const response = authService.isAuthenticated
       return response
     }

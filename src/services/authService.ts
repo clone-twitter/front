@@ -1,11 +1,11 @@
 export class AuthService {
-    private _isAuthenticated: boolean = true;
+    private _isAuthenticated: boolean | null = null;
 
-    public get isAuthenticated(): boolean {
+    public get isAuthenticated(): boolean | null {
       return this._isAuthenticated;
     }
 
-    public set isAuthenticated(value: boolean) {
+    public set isAuthenticated(value: boolean | null) {
       this._isAuthenticated = value;
     }
 
