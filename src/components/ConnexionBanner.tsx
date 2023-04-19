@@ -8,12 +8,14 @@ const ConnexionBanner = () => {
     <div className="connexion_banner">
       <div className="connexion_banner_content">
         <div className="connexion_banner_text">
-          <Title
-            title="Ne manquez pas ce qui se passe."
-          />
-          <Textcontent
-            text="Les utilisateurs de Twitter sont les premiers à savoir."
-          />
+          <div className="text_wrap">
+            <Title
+              title="Ne manquez pas ce qui se passe."
+            />
+            <Textcontent
+              text="Les utilisateurs de Twitter sont les premiers à savoir."
+            />
+          </div>
         </div>
         <div className="connexion_banner_button">
           <Button 

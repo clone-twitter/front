@@ -1,5 +1,5 @@
 .connexion_banner {
-  position: absolute;
+  position: fixed;
   z-index: 3;
   bottom: 0;
   left: 0;
@@ -11,13 +11,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-basis: 2 1;
     padding: 0 20px 0 100px;
 
     .connexion_banner_text {
       margin-right: 10px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: start;
+      justify-content: center;
+      align-items: center;
 
       h2 {
         margin-bottom: 3px;
