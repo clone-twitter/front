@@ -1,4 +1,4 @@
-.tweetInput {
+.tweet_input {
   display: block;
   width: 100%;
   resize: none;
@@ -15,4 +15,8 @@
   &::placeholder {
     font-size: 20px;
   }
+}
+
+.text_input {
+
 }

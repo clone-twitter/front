@@ -10,7 +10,7 @@ const TweetInput = ({placeholder}: Props) => {
   return (
     <>
       <textarea
-        className="tweetInput"
+        className="tweet_input"
         name="tweet" 
         id={tweetInputId}
         placeholder={placeholder}
