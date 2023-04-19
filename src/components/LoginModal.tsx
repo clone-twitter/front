@@ -6,11 +6,23 @@ import Title from "../atoms/fonts/Title";
 import Textcontent from "../atoms/fonts/TextContent";
 import TextInput from "../atoms/forms/TextInput";
 import PasswordInput from "../atoms/forms/PasswordInput";
+import { AuthService } from "../services/authService";
 
 interface Props {
 }
 
 const LoginModal = (props: Props) => {
+
+  const authService = new AuthService();
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.target;
+    const data = new FormData(form as HTMLFormElement);
+    
+    authService.getLogin(data.get("username") as string, data.get("password") as string);
+  }
+
   return (
     <Modal>
       <div className="logo">
@@ -43,15 +55,17 @@ const LoginModal = (props: Props) => {
         <div className="division_line"></div>
       </div>
       <div className="form">
-        <form>
+        <form onSubmit={(event) => handleSubmit(event)}>
           <TextInput
             props={{
-              label: "Adresse e-mail"
+              label: "Adresse e-mail",
+              name: "username"
             }}
           />
           <PasswordInput
             props={{
-              label: "Mot de passe"
+              label: "Mot de passe",
+              name: "password"
             }}
           />
           <Button 

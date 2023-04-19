@@ -4,6 +4,7 @@ import useTheme from "../../hooks/theme";
 interface Props {
   props: {
     label: string;
+    name: string;
   }
 }
 
@@ -24,7 +25,8 @@ const TextInput = ({props}: Props) => {
       <span>{props.label}</span>
       <input 
         id={inputId} 
-        type="text" 
+        type="text"
+        name={props.name}
         onFocus={() => handleFocus()}
         onBlur={() => setIsBlur(true)}
       />

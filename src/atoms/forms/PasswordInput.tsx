@@ -4,6 +4,7 @@ import useTheme from "../../hooks/theme";
 interface Props {
   props: {
     label: string;
+    name: string;
   }
 }
 
@@ -23,7 +24,8 @@ const PasswordInput = ({props}: Props) => {
       <span>{props.label}</span>
       <input 
         id={inputId} 
-        type="password" 
+        type="password"
+        name={props.name}
         onFocus={() => handleFocus()}
         onBlur={() => setIsBlur(true)}
       />
