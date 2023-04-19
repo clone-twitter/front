@@ -18,5 +18,67 @@
 }
 
 .text_input {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid;
+  height: auto;
+  outline: none;
+  border-radius: 4px;
+  position: relative;
+  padding: 30px 10px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  position: relative;
 
+  span {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: inherit;
+    font-size: inherit;
+  }
+
+  &.LightTheme {
+    border-color: $dark4;
+    color: $dark4;
+  }
+
+  &.DarkTheme {
+    border-color: $dark5;
+    color: $dark5;
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+  }
+
+  &.active {
+    border-color: $primary;
+    color: $primary;
+
+    span {
+      top: 5px;
+      transform: translateY(0);
+      font-size: 0.875rem;
+    }
+  }
+
+  &.blur {
+    &.LightTheme {
+      border-color: $dark4;
+      color: $dark4;
+    }
+    &.DarkTheme {
+      border-color: $dark5;
+      color: $dark5;
+    }
+  }
 }

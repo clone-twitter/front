@@ -4,6 +4,7 @@ import Button from "../atoms/Button";
 import Logo from "../atoms/Logo";
 import Title from "../atoms/fonts/Title";
 import Textcontent from "../atoms/fonts/TextContent";
+import TextInput from "../atoms/forms/TextInput";
 
 interface Props {
 }
@@ -39,6 +40,15 @@ const LoginModal = (props: Props) => {
           <Textcontent text="ou"/>
         </div>
         <div className="division_line"></div>
+      </div>
+      <div className="form">
+        <form>
+          <TextInput
+            props={{
+              label: "Adresse e-mail"
+            }}
+          />
+        </form>
       </div>
     </Modal>
   );
