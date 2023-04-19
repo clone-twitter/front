@@ -1,0 +1,47 @@
+.connexion_banner {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: $primary;
+  padding: 15px 0;
+
+  .connexion_banner_content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 100px;
+
+    .connexion_banner_text {
+      margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+
+      h2 {
+        margin-bottom: 3px;
+      }
+    }
+
+    .connexion_banner_button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      button {
+        padding: 0 20px;
+        margin-right: 20px;
+
+        &.secondary {
+          border-color: $white;
+          color: $white;
+
+          &:hover {
+            background-color: $primaryhover;
+          }
+        }
+      }
+    }
+  }
+}

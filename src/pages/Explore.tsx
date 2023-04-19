@@ -9,6 +9,7 @@ import Profile from "../molecules/Profile";
 import useAuth from "../hooks/auth";
 import Button from "../atoms/Button";
 import Textinfo from "../atoms/fonts/TextInfo";
+import ConnexionBanner from "../components/ConnexionBanner";
 
 
 const Explore = () => {
@@ -116,6 +117,10 @@ const Explore = () => {
           </Card>
         }
       </SideColumn>
+      {
+        !auth?.auth &&
+        <ConnexionBanner/>
+      }
     </div>
   );
 };

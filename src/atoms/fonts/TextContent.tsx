@@ -2,14 +2,16 @@ import React from "react";
 import "linkify-plugin-mention";
 import Linkify from "linkify-react"
 import "linkify-plugin-hashtag";
+import useTheme from "../../hooks/theme";
 
 
 interface Props {
-  text: string,
-  theme: 'DarkTheme' | 'LightTheme',
+  text: string
 }
 
-const Textcontent = ({text, theme}: Props) => {
+const Textcontent = ({text}: Props) => {
+
+  const theme = useTheme()
 
   const options = {
     formatHref: {
