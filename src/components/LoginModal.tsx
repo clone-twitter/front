@@ -5,6 +5,7 @@ import Logo from "../atoms/Logo";
 import Title from "../atoms/fonts/Title";
 import Textcontent from "../atoms/fonts/TextContent";
 import TextInput from "../atoms/forms/TextInput";
+import PasswordInput from "../atoms/forms/PasswordInput";
 
 interface Props {
 }
@@ -47,6 +48,16 @@ const LoginModal = (props: Props) => {
             props={{
               label: "Adresse e-mail"
             }}
+          />
+          <PasswordInput
+            props={{
+              label: "Mot de passe"
+            }}
+          />
+          <Button 
+            text="Connexion"
+            type="tertiary"
+            size="medium"
           />
         </form>
       </div>
