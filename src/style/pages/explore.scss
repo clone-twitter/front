@@ -24,4 +24,22 @@
       }
     }
   }
+
+  .side_column {
+    .card {
+      p {
+        &.info {
+          margin-bottom: 20px;
+        }
+      }
+
+      .register {
+        margin-bottom: 20px;
+
+        button {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
 }

@@ -6,14 +6,14 @@ import Title from "../atoms/fonts/Title";
 
 interface Props {
   text: string,
-  link: string,
+  link?: string,
 }
 
 const Card = (props: PropsWithChildren<Props>) => {
   const navigate = useNavigate()
 
   const handleClick = () => {
-    navigate(props.link)
+    navigate(props.link!)
   }
 
   return (
@@ -26,13 +26,16 @@ const Card = (props: PropsWithChildren<Props>) => {
       <main>
         {props.children}
       </main>
-      <footer onClick={handleClick}>
-        <Link
-          to={props.link}
-        > 
-          Show more
-        </Link>
-      </footer>
+      {
+        props.link &&
+        <footer onClick={handleClick}>
+          <Link
+            to={props.link}
+          > 
+            Show more
+          </Link>
+        </footer>
+      }
     </div>
   )
 }
