@@ -38,8 +38,7 @@ const Profile = ({theme, user, isButtonActive}: Props) => {
             text="Suivre"
           />
         ) : (
-          <Logo 
-            theme={theme}
+          <Logo
             name="More"
             state="Default"
           />

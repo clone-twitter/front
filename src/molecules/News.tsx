@@ -18,7 +18,6 @@ const News = ({theme, topic, date, content, trend}: Props) => {
         <div className="info">
           <Textinfo
             text={topic}
-            theme={theme}
           />
           <p className="separator">
             <span>
@@ -27,19 +26,16 @@ const News = ({theme, topic, date, content, trend}: Props) => {
           </p>
           <Textinfo
             text={date}
-            theme={theme}
           />
         </div>
         <div className="content">
           <Subtitle
             text={content}
-            theme={theme}
           />
         </div>
         <div className="trend">
           <Textinfo
             text={trend}
-            theme={theme}
             linkify={true}
           />
         </div>

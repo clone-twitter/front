@@ -13,10 +13,8 @@ const Header = ({title, theme}: Props) => {
     <header className="header">
       <Title
         title={title}
-        theme={theme}
       />
       <Logo
-        theme={theme}
         name="TopTweet"
         state="Default"
       />

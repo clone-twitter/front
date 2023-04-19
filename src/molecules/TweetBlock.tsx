@@ -37,8 +37,7 @@ const TweetBlock = ({img, theme, type, state, placeholder}: Props) => {
             {
               names.map( name => {
                 return (
-                  <Logo 
-                    theme={theme}
+                  <Logo
                     name={name}
                     state={state}
                     key={name}
