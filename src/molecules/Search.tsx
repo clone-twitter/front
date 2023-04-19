@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Logo from "../atoms/Logo";
-import { Theme } from "../interfaces/Theme";
 
 interface Props {
   placeholder: string,
-  theme: Theme
 }
 
-const Search = ({placeholder, theme}: Props) => {
+const Search = ({placeholder}: Props) => {
 
   const [isActive, setIsActive] = useState(false)
 
@@ -20,13 +18,11 @@ const Search = ({placeholder, theme}: Props) => {
           {
             isActive ? (
               <Logo
-                theme={theme}
                 name="Search"
                 state="Blue"
               />
             ) :
             <Logo
-              theme={theme}
               name="Search"
               state="Default"
             />

@@ -1,5 +1,4 @@
 import React from "react";
-import { Theme } from "../interfaces/Theme";
 import Search from "../molecules/Search";
 import Title from "../atoms/fonts/Title";
 import SideColumn from "../components/SideColumn";
@@ -22,7 +21,6 @@ const Explore = () => {
         <div className="search_wrap">
           <Search
             placeholder="Recherche Twitter"
-            theme={"DarkTheme" as Theme}
           />
         </div>
         <div className="trends">

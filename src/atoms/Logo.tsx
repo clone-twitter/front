@@ -1,13 +1,16 @@
 import React from "react";
-import { State, Theme } from "../interfaces/Theme";
+import { State } from "../interfaces/Theme";
+import useTheme from "../hooks/theme";
 
 interface Props {
-  theme: Theme,
   name: string,
   state?: State,
 }
 
-const Logo = ({theme, name, state}: Props) => {
+const Logo = ({name, state}: Props) => {
+
+const theme = useTheme()
+
   return (
     <span className="logo">
       {
