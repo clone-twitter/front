@@ -115,10 +115,6 @@ const Explore = () => {
           </Card>
         }
       </SideColumn>
-      {
-        !auth?.auth &&
-        <ConnexionBanner/>
-      }
     </div>
   );
 };

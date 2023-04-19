@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import SideMenu from "../components/SideMenu";
 import { Theme } from "../interfaces/Theme";
 import { Outlet, useMatch, useNavigate } from "react-router-dom";
-import SideColumn from "../components/SideColumn";
+import ConnexionBanner from "../components/ConnexionBanner";
+import useAuth from "../hooks/auth";
 
 interface Props {
   theme: Theme,
@@ -12,6 +13,7 @@ const Layout = ({theme}: Props) => {
 
   const match = useMatch("/")
   const navigate = useNavigate()
+  const auth = useAuth()
 
   useEffect(() => {
     match?.pathname === "/" && navigate("/home")
@@ -25,6 +27,10 @@ const Layout = ({theme}: Props) => {
       <main>
         <Outlet />
       </main>
+      {
+        !auth?.auth &&
+        <ConnexionBanner/>
+      }
     </div>
   )
 }

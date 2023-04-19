@@ -32,16 +32,19 @@
       align-items: center;
       justify-content: space-between;
 
-      button {
-        padding: 0 20px;
+      a {
         margin-right: 20px;
 
-        &.secondary {
-          border-color: $white;
-          color: $white;
-
-          &:hover {
-            background-color: $primaryhover;
+        button {
+          padding: 0 20px;
+  
+          &.secondary {
+            border-color: $white;
+            color: $white;
+  
+            &:hover {
+              background-color: $primaryhover;
+            }
           }
         }
       }

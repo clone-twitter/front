@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style/main.scss'
 import Home from './pages/Home';
 import { Theme } from './interfaces/Theme';
-import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom';
+import { Route, RouterProvider, Routes, createBrowserRouter, createRoutesFromElements, useLocation } from 'react-router-dom';
 import Explore from './pages/Explore';
 import Layout from './pages/Layout';
 import Notifications from './pages/Notifications';
@@ -13,39 +13,68 @@ import Profile from './pages/Profile';
 import Error from './pages/Error';
 import AuthProvider, { RequireAuth } from './contexts/AuthContext';
 import ThemeProvider from './contexts/ThemeContext';
+import LoginModal from './components/LoginModal';
 
 
 function App() {
 
   const [theme, setTheme] = useState("DarkTheme" as Theme)
+  let location = useLocation()
+  let state = location.state as {backgroundLocation: Location}
 
-  const router = createBrowserRouter(
-    createRoutesFromElements(
-          <Route 
-            path="/" 
-            element={<Layout theme={theme as Theme}/>}
-            errorElement={<Error theme={theme as Theme}/>}
-          >
-            <Route path='/home' index element={
-              <RequireAuth>
-                <Home theme={theme as Theme}/>
-              </RequireAuth>
-            }/>
-            <Route path="/explore" element={<Explore />}/>
-            <Route path="/notifications" element={<Notifications />}/>
-            <Route path="/messages" element={<Messages />}/>
-            <Route path="/bookmarks" element={<Bookmarks />}/>
-            <Route path="/lists" element={<Lists />}/>
-            <Route path="/profile" element={<Profile />}/>
-          </Route>
-    )
-  );
+  console.log(location, 'location')
+
+  // const router = createBrowserRouter(
+  //   createRoutesFromElements(
+  //         <Route 
+  //           path="/" 
+  //           element={<Layout theme={theme as Theme}/>}
+  //           errorElement={<Error theme={theme as Theme}/>}
+  //         >
+  //           <Route path='/home' index element={
+  //             <RequireAuth>
+  //               <Home theme={theme as Theme}/>
+  //             </RequireAuth>
+  //           }/>
+  //           <Route path="/explore" element={<Explore />}/>
+  //           <Route path="/notifications" element={<Notifications />}/>
+  //           <Route path="/messages" element={<Messages />}/>
+  //           <Route path="/bookmarks" element={<Bookmarks />}/>
+  //           <Route path="/lists" element={<Lists />}/>
+  //           <Route path="/profile" element={<Profile />}/>
+  //         </Route> 
+  //   )
+  // );
     
   return (
     <div className={`App ${theme}`}>
       <AuthProvider>
         <ThemeProvider>
-          <RouterProvider router={router}/>
+          <Routes location={state?.backgroundLocation || location}>
+            <Route 
+              path="/" 
+              element={<Layout theme={theme as Theme}/>}
+              errorElement={<Error theme={theme as Theme}/>}
+            >
+              <Route path='/home' index element={
+                <RequireAuth>
+                  <Home theme={theme as Theme}/>
+                </RequireAuth>
+              }/>
+              <Route path="/explore" element={<Explore />}/>
+              <Route path="/notifications" element={<Notifications />}/>
+              <Route path="/messages" element={<Messages />}/>
+              <Route path="/bookmarks" element={<Bookmarks />}/>
+              <Route path="/lists" element={<Lists />}/>
+              <Route path="/profile" element={<Profile />}/>
+            </Route>
+          </Routes>
+          {
+            state?.backgroundLocation &&
+            <Routes>
+              <Route path="/login" element={<LoginModal />}/>
+            </Routes>
+          }
         </ThemeProvider>
       </AuthProvider>
     </div>
