@@ -26,22 +26,17 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
       return response
     }
 
-    const auth = async (): Promise<boolean | null> => {
-      const response = authService.isAuthenticated
-      return response
-    }
-
-    auth().then((response) => {
-      setAuth(response)
-    })
-
     user().then((response) => {
-      setUser(response)
+      if (!response.data) {
+        console.log(response)
+        setUser(response)
+        setAuth(true)
+      }
+    }).catch((error) => {
+      console.log(error)
     })
     
   }, []);
-
-  // console.log('authcontext', user, auth)
 
   return (
     <AuthContext.Provider value={{ user, auth }}>{children}</AuthContext.Provider>
@@ -52,10 +47,11 @@ export const RequireAuth = ({ children }: { children: JSX.Element }) => {
   let auth = useAuth();
   let location = useLocation();
 
+  console.log(auth)
+
   if (!auth?.auth) {
     return <Navigate to="/explore" state={{ from: location }} replace />;
   }
-  console.log('auth', auth)
 
   return children;
 }

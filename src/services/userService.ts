@@ -28,7 +28,14 @@ export class UserService {
 
 
     return fetch(`http://localhost:1337/api/users/me${params}`, options)
-      .then(response => response.json());
+      .then(response => {
+        if (response.error?.status === 401) return null;
+        return response.json();
+      })
+      .catch((error: any) => {
+        console.error(error);
+      })
+
   }
 
   

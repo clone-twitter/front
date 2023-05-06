@@ -5,6 +5,7 @@ interface Props {
   props: {
     label: string;
     name: string;
+    autocomplete?: string;
   }
 }
 
@@ -28,6 +29,7 @@ const PasswordInput = ({props}: Props) => {
         name={props.name}
         onFocus={() => handleFocus()}
         onBlur={() => setIsBlur(true)}
+        autoComplete={props.autocomplete}
       />
     </label>
   );

@@ -7,20 +7,22 @@ import Textcontent from "../atoms/fonts/TextContent";
 import TextInput from "../atoms/forms/TextInput";
 import PasswordInput from "../atoms/forms/PasswordInput";
 import { AuthService } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
-interface Props {
-}
-
-const LoginModal = (props: Props) => {
+const LoginModal = () => {
 
   const authService = new AuthService();
+  const navigate = useNavigate()
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.target;
     const data = new FormData(form as HTMLFormElement);
     
-    authService.getLogin(data.get("username") as string, data.get("password") as string);
+    authService.login(data.get("username") as string, data.get("password") as string, () => {
+      authService.isAuthenticated = true
+      navigate('/home')
+    })
   }
 
   return (
@@ -59,13 +61,15 @@ const LoginModal = (props: Props) => {
           <TextInput
             props={{
               label: "Adresse e-mail",
-              name: "username"
+              name: "username",
+              autocomplete: "section-user username"
             }}
           />
           <PasswordInput
             props={{
               label: "Mot de passe",
-              name: "password"
+              name: "password",
+              autocomplete: "section-user current-password"
             }}
           />
           <Button 

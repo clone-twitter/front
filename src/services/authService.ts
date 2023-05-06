@@ -9,7 +9,7 @@ export class AuthService {
       this._isAuthenticated = value;
     }
 
-    public async login(username: string, password: string): Promise<void> {
+    private async getLogin(username: string, password: string, cb?: Function): Promise<void> {
       await fetch('http://localhost:1337/api/auth/local', {
         method: 'POST',
         headers: {
@@ -22,13 +22,20 @@ export class AuthService {
         })
       }).then((response: any) => {
         return response.json();
-      }).catch((error: any) => {
+      })
+      .then((data: any) => {
+        if (data) {
+          data.jwt && localStorage.setItem('_tka', data.jwt);
+          cb && cb();
+        }
+      })
+      .catch((error: any) => {
         console.error(error);
-      });
+      })
     }
 
-    public async getLogin(username: string, password: string): Promise<void> {
-      const user = await this.login(username, password);
+    public async login(username: string, password: string, cb: Function): Promise<void> {
+      const user = await this.getLogin(username, password, cb);
       return user;
     }
 

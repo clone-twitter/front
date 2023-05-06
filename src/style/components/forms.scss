@@ -17,7 +17,8 @@
   }
 }
 
-.text_input, .password_input {
+.text_input,
+.password_input {
   display: block;
   width: 100%;
   background-color: transparent;
@@ -53,11 +54,12 @@
     width: 100%;
     border: none;
     background-color: transparent;
-    height: 100%;
+    height: 50%;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 40%;
     padding: 0 10px;
+    box-sizing: border-box;
   }
 
   &.active {
