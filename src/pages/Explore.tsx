@@ -59,7 +59,7 @@ const Explore = () => {
       </div>
       <SideColumn>
         {
-          auth?.auth &&
+          auth?.user &&
           <Card
             text="Suggestions"
             link="/news"
@@ -85,7 +85,7 @@ const Explore = () => {
           </Card>
         }
         {
-          !auth?.auth &&
+          !auth?.user &&
           <Card
             text="Nouveau sur Twitter ?"
           >

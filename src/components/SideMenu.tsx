@@ -82,7 +82,7 @@ const SideMenu = ({theme}: Props) => {
             <img src={`/icons/${theme}/Logo.svg`} alt="Oiseau twitter" />
           </h1>
           {
-            auth?.auth ? (
+            auth?.user ? (
               <div className="menu_wrap">
                 {
                   menuItems.map(item => {
@@ -115,7 +115,7 @@ const SideMenu = ({theme}: Props) => {
             )
           }
           {
-            auth?.auth &&
+            auth?.user &&
             <div className="btn_wrap">
               <Button 
                 size="big"
@@ -126,7 +126,7 @@ const SideMenu = ({theme}: Props) => {
           }
         </div>
         {
-          auth?.auth &&
+          auth?.user &&
           <div className="bottom">
             <Profile
               theme={theme}

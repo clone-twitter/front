@@ -28,7 +28,7 @@ const Layout = ({theme}: Props) => {
         <Outlet />
       </main>
       {
-        !auth?.auth &&
+        !auth?.user &&
         <ConnexionBanner/>
       }
     </div>

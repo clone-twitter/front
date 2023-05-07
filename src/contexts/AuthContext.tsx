@@ -7,7 +7,6 @@ import { IUser } from "../interfaces/User";
 
 export interface AuthContextType {
   user?: IUser;
-  auth: boolean | null;
 }
 
 export let AuthContext = createContext<AuthContextType | null>(null);
@@ -15,22 +14,18 @@ export let AuthContext = createContext<AuthContextType | null>(null);
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
   let [user, setUser] = useState<IUser>();
-  let [auth, setAuth] = useState<boolean | null>(null);
   
-  const userService = new UserService()
   const authService = new AuthService()
 
   useEffect(() => {
     const user = async () => {
-      const response = await userService.getAuthUser()
+      const response = await authService.getAuthUser()
       return response
     }
 
     user().then((response) => {
-      if (!response.data) {
-        console.log(response)
+      if (!response.error) {
         setUser(response)
-        setAuth(true)
       }
     }).catch((error) => {
       console.log(error)
@@ -39,7 +34,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, auth }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
   );
 };
 
@@ -49,7 +44,7 @@ export const RequireAuth = ({ children }: { children: JSX.Element }) => {
 
   console.log(auth)
 
-  if (!auth?.auth) {
+  if (!auth?.user) {
     return <Navigate to="/explore" state={{ from: location }} replace />;
   }
 

@@ -23,8 +23,8 @@ function App() {
   let state = location.state as {backgroundLocation: Location}
     
   return (
-    <div className={`App ${theme}`}>
       <AuthProvider>
+    <div className={`App ${theme}`}>
         <ThemeProvider>
           <Routes location={state?.backgroundLocation || location}>
             <Route 
@@ -37,8 +37,12 @@ function App() {
                   <Home theme={theme as Theme}/>
                 </RequireAuth>
               }/>
+              <Route path="/notifications" element={
+                <RequireAuth>
+                  <Notifications />
+                </RequireAuth>
+              }/>
               <Route path="/explore" element={<Explore />}/>
-              <Route path="/notifications" element={<Notifications />}/>
               <Route path="/messages" element={<Messages />}/>
               <Route path="/bookmarks" element={<Bookmarks />}/>
               <Route path="/lists" element={<Lists />}/>
@@ -52,8 +56,8 @@ function App() {
             </Routes>
           }
         </ThemeProvider>
-      </AuthProvider>
     </div>
+      </AuthProvider>
   );
 }
 
