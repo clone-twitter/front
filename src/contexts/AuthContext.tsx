@@ -1,5 +1,4 @@
 import React, { createContext, useEffect, useState } from "react";
-import { UserService } from "../services/userService";
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../hooks/auth";
 import { AuthService } from "../services/authService";
@@ -14,6 +13,7 @@ export let AuthContext = createContext<AuthContextType | null>(null);
 const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   
   let [user, setUser] = useState<IUser>();
+  let [loader, setLoader] = useState<boolean>(true);
   
   const authService = new AuthService()
 
@@ -26,6 +26,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     user().then((response) => {
       if (!response.error) {
         setUser(response)
+        setLoader(false)
       }
     }).catch((error) => {
       console.log(error)
@@ -33,6 +34,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     
   }, []);
 
+  if (loader) { return null }
   return (
     <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
   );

@@ -24,39 +24,42 @@ function App() {
     
   return (
       <AuthProvider>
-    <div className={`App ${theme}`}>
-        <ThemeProvider>
-          <Routes location={state?.backgroundLocation || location}>
-            <Route 
-              path="/" 
-              element={<Layout theme={theme as Theme}/>}
-              errorElement={<Error theme={theme as Theme}/>}
-            >
-              <Route path='/home' index element={
-                <RequireAuth>
-                  <Home theme={theme as Theme}/>
-                </RequireAuth>
-              }/>
-              <Route path="/notifications" element={
-                <RequireAuth>
-                  <Notifications />
-                </RequireAuth>
-              }/>
-              <Route path="/explore" element={<Explore />}/>
-              <Route path="/messages" element={<Messages />}/>
-              <Route path="/bookmarks" element={<Bookmarks />}/>
-              <Route path="/lists" element={<Lists />}/>
-              <Route path="/profile" element={<Profile />}/>
-            </Route>
-          </Routes>
-          {
-            state?.backgroundLocation &&
-            <Routes>
-              <Route path="/login" element={<LoginModal />}/>
-            </Routes>
-          }
-        </ThemeProvider>
-    </div>
+        <div className={`App ${theme}`}>
+            <ThemeProvider>
+              <Routes location={state?.backgroundLocation || location}>
+                <Route 
+                  path="/" 
+                  element={<Layout theme={theme as Theme}/>}
+                  errorElement={<Error theme={theme as Theme}/>}
+                >
+                  <Route 
+                    path='/home' 
+                    index
+                    element={
+                      <RequireAuth>
+                        <Home theme={theme as Theme}/>
+                      </RequireAuth>
+                    }/>
+                  <Route path="/notifications" element={
+                    <RequireAuth>
+                      <Notifications />
+                    </RequireAuth>
+                  }/>
+                  <Route path="/explore" element={<Explore />}/>
+                  <Route path="/messages" element={<Messages />}/>
+                  <Route path="/bookmarks" element={<Bookmarks />}/>
+                  <Route path="/lists" element={<Lists />}/>
+                  <Route path="/profile" element={<Profile />}/>
+                </Route>
+              </Routes>
+              {
+                state?.backgroundLocation &&
+                <Routes>
+                  <Route path="/login" element={<LoginModal />}/>
+                </Routes>
+              }
+            </ThemeProvider>
+        </div>
       </AuthProvider>
   );
 }
